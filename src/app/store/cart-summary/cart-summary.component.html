@@ -1,0 +1,15 @@
+<div class="pull-right">
+  <small>
+    <span *ngIf="cart.itemCount > 0"  class="text-white">
+      {{cart.itemCount}} item (s)
+      {{cart.cartPrice | currency:"USD": true: "2.2-2"}}
+    </span>
+    <span *ngIf="cart.itemCount === 0" class="text-white">
+      (empty)
+    </span>
+    <button class="btn btn-warning btn-sm lnr lnr-cart" [disabled]="cart.itemCount === 0" (click)="Carrito()"
+            routerLink = "/cart">
+
+    </button>
+  </small>
+</div>
