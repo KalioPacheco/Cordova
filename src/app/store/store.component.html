@@ -8,24 +8,24 @@
 
       <h1 class="my-4">Shop Name</h1>
       <div class="list-group">
-        <a href="#" class="list-group-item" (click)="changeCategory(null)">All Items</a>
-        <a href="#" class="list-group-item " [class.active]="category == selectedCategory"
+        <a  class="list-group-item" (click)="changeCategory(null)">All Items</a>
+        <a  class="list-group-item " [class.active]="category == selectedCategory"
           *ngFor="let category of categories" (click)="changeCategory(category)">{{category}}</a>
       </div>
       <!-- Scale -->
 
         <h1 class="my-4">Scale</h1>
         <div class="list-group">
-          <a href="#" class="list-group-item" (click)="changeScale(null)">All Items</a>
-          <a href="#" class="list-group-item " [class.active]="scale == selectedScale"
+          <a  class="list-group-item" (click)="changeScale(null)">All Items</a>
+          <a  class="list-group-item " [class.active]="scale == selectedScale"
              *ngFor="let scale of Scale" (click)="changeScale(scale)">{{scale}}</a>
         </div>
       <!-- Ventor -->
 
       <h1 class="my-4">Ventor</h1>
       <div class="list-group">
-        <a href="#" class="list-group-item" (click)="changeVentor(null)">All Items</a>
-        <a href="#" class="list-group-item " [class.active]="ventor == selectedVentor"
+        <a  class="list-group-item" (click)="changeVentor(null)">All Items</a>
+        <a  class="list-group-item " [class.active]="ventor == selectedVentor"
            *ngFor="let ventor of Ventor" (click)="changeVentor(ventor)">{{ventor}}</a>
       </div>
 
@@ -66,12 +66,12 @@
 
       <div class="row">
 
-        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products" [routerLink]="product.productCode">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <label (click)="Prueba(product)" ><img class="card-img-top" src="http://placehold.it/700x400" alt=""></label>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">{{product.productName}}</a>
+                <a >{{product.productName}}</a>
               </h4>
               <h5><span class="badge badge-pill badge-info">{{product.MSRP | currency}}</span></h5>
               <p class="card-text">{{product.productDescription | slice:0:100}}</p>
@@ -99,7 +99,7 @@
           <ul class="pagination pagination-lg">
 
             <li class="page-item" *ngFor="let page of pageNumber" [class.active]="page == selectPage">
-              <a (click)="changePage(page)" class="page-link" href="#">
+              <a (click)="changePage(page)" class="page-link">
                 {{page}}
               </a>
             </li>

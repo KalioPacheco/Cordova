@@ -4,6 +4,8 @@ import { StoreComponent } from './store.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartSummaryComponent } from './cart-summary/cart-summary.component';
+import { DetailsComponent } from './details/details.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -11,9 +13,11 @@ import { CartSummaryComponent } from './cart-summary/cart-summary.component';
     NavComponent,
     FooterComponent,
     CartSummaryComponent,
+    DetailsComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     StoreComponent

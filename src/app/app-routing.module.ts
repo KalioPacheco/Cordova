@@ -4,9 +4,13 @@ import {StoreComponent} from './store/store.component';
 import {CartComponent} from './store/cart/cart.component';
 import {CheckoutComponent} from './store/checkout/checkout.component';
 import {PageNotFoundComponent} from './store/page-not-found/page-not-found.component';
+import {DetailsComponent} from './store/details/details.component';
 const routes: Routes = [
   {
     path: 'store' , component: StoreComponent
+  },
+  {
+    path: 'store/:id' , component: DetailsComponent
   },
   {
     path: 'cart' , component: CartComponent

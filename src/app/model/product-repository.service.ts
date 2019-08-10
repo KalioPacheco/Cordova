@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Product } from './product';
-import { ProductDatasourceService } from './product-datasource.service';
+import {Injectable} from '@angular/core';
+import {Product} from './product';
+import {ProductDatasourceService} from './product-datasource.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +17,11 @@ export class ProductRepositoryService {
       this.categories = response['products'].map(p => p.productLine).filter((c, index, array) => array.indexOf(c) === index).sort();
       this.scale = response['products'].map(p => p.productScale).filter((valor, indiceActual, arreglo) => arreglo.indexOf(valor) === indiceActual);
       this.ventor = response['products'].map(p => p.productVendor).filter((valor, indiceActual, arreglo) => arreglo.indexOf(valor) === indiceActual);
-
     });
+  }
+
+  product_selected() {
+    return this.dataSourceService.getProducts();
   }
 
   getProducts(productLine: string = null, productScale: string = null, productVentor: string = null): Product[] {
@@ -30,9 +33,11 @@ export class ProductRepositoryService {
   getCategories(): string[] {
     return this.categories;
   }
+
   getScalas(): string[] {
-    return  this.scale;
+    return this.scale;
   }
+
   getVentor(): string[] {
     return this.ventor;
   }
